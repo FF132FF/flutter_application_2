@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
 // получение погоды при запуске
-    _fetchWeather('New York');
+    _fetchWeather(inputCityName);
   }
 
   @override
@@ -73,41 +73,84 @@ class _HomePageState extends State<HomePage> {
                     style: const TextStyle(
                         fontFamily: '.SF UI Text',
                         fontStyle: FontStyle.italic,
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold,
-                        color: Color.fromARGB(229, 76, 108, 198))),
+                        fontSize: 52,
+                        fontWeight: FontWeight.w400,
+                        decorationStyle: TextDecorationStyle.dotted,
+                        color: Color.fromARGB(228, 106, 145, 253))),
                   Stack(
                     alignment: Alignment.topCenter,
                     children: [
                       Lottie.asset("assets/${_weather?.icon ?? "01d"}.json",
                         height: 225, width: 225),
-                      Text(
-                        '${_weather?.temperature.round()}°C',
-                        style: const TextStyle(
-                          fontFamily: '.SF UI Text',
-                          fontSize: 52,
-                          color: Color.fromARGB(128, 76, 108, 198),
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.italic),
-                      )
+                      Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(width: 0, height: 100),
+                          Text(
+                            '${_weather?.temperature.round()}°C',
+                            style: const TextStyle(
+                              fontFamily: '.SF UI Text',
+                              fontSize: 52,
+                              color: Color.fromARGB(150, 106, 145, 253),
+                              fontWeight: FontWeight.w300,
+                              fontStyle: FontStyle.italic),
+                          )
+                        ]
+                      ),
                     ],
                   ),
-                  Text(_weather?.description ?? "Описание",
+                  Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    Text(_weather?.description ?? "Описание",
+                    textAlign: TextAlign.center,
                     style: const TextStyle(
                         fontFamily: '.SF UI Text',
-                        fontSize: 25,
+                        fontSize: 32,
                         fontStyle: FontStyle.italic,
-                        color: Colors.black87)),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Image.asset('assets/gauge.png', height: 50, width: 50),
-                    Text('${_weather?.pressure.round().toString()} мм.рт.с.' ?? "Давление"),
-                    Image.asset('assets/wind.png', height: 50, width: 50),
-                    Text('${_weather?.speed} м/с' ?? "Скорость ветра"),
-                    Image.asset('assets/humidity.png', height: 50, width: 50),
-                    Text('${_weather?.humidity}%' ?? "Влажность"),
-                  ],
+                        fontWeight: FontWeight.w300,
+                        color: Color.fromARGB(228, 106, 145, 253))),
+                  ],),
+                Container(
+                  margin: EdgeInsets.only(right: 30, left: 10, top: 20, bottom: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      Column(
+                        children: [
+                          Image.asset('assets/gauge.png', height: 50, width: 50),
+                          Container(height: 10),
+                          Text('${_weather?.pressure.round().toString()} мм.рт.с.' ?? "Давление",
+                          style: const TextStyle(
+                          fontFamily: '.SF UI Text',
+                          fontSize: 13,
+                          fontStyle: FontStyle.italic,
+                          color: Color.fromARGB(200, 188, 76, 198))),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Image.asset('assets/wind.png', height: 50, width: 50),
+                          Container(height: 10),
+                          Text('${_weather?.speed} м/с' ?? "Скорость ветра",
+                          style: const TextStyle(
+                          fontFamily: '.SF UI Text',
+                          fontSize: 13,
+                          fontStyle: FontStyle.italic,
+                          color: Color.fromARGB(200, 76, 198, 157))),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Image.asset('assets/humidity.png', height: 50, width: 50),
+                          Container(height: 10),
+                          Text('${_weather?.humidity}%' ?? "Влажность",
+                          style: const TextStyle(
+                          fontFamily: '.SF UI Text',
+                          fontSize: 13,
+                          fontStyle: FontStyle.italic,
+                          color: Color.fromARGB(200, 76, 176, 198))),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ]),
             ),
