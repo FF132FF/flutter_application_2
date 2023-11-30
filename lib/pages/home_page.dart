@@ -72,18 +72,29 @@ class _HomePageState extends State<HomePage> {
                     onSubmitted: (text) {
                       _fetchWeather(_controller.text);
                     },
+                    cursorColor: Color.fromARGB(229, 76, 108, 198), cursorWidth: 0.5,
                     style: const TextStyle(
-                        fontFamily: '.SF UI Text',
-                        fontStyle: FontStyle.italic,
-                        fontSize: 26,
-                        fontWeight: FontWeight.w400,
-                        decorationStyle: TextDecorationStyle.wavy,
-                        decorationColor: Color.fromARGB(228, 106, 145, 253),
-                        color: Color.fromARGB(228, 106, 145, 253)),
+                      fontFamily: '.SF UI Text',
+                      fontStyle: FontStyle.italic,
+                      fontSize: 26,
+                      fontWeight: FontWeight.w400,
+                      decorationStyle: TextDecorationStyle.wavy,
+                      decorationColor: Color.fromARGB(228, 106, 145, 253),
+                      color: Color.fromARGB(228, 106, 145, 253)
+                    ),
                     decoration: const InputDecoration(
-                      
-                      filled: false
-                    )
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color.fromARGB(229, 76, 108, 198), width: 0.0),
+                      ),
+        
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color.fromARGB(229, 76, 108, 198), width: 0.5),
+                      ),
+        
+                      labelStyle: TextStyle(
+                        color: Color.fromARGB(229, 76, 108, 198),
+                      ),
+                    ),
                   ),
                   Stack(
                     alignment: Alignment.topCenter,
