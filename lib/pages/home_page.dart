@@ -24,7 +24,8 @@ class _HomePageState extends State<HomePage> {
 // получить погоду для этого города
     try {
       if (inputCityName != '') {
-        final weather = await _weatherService.getWeather(inputCityName);
+        String resultCity = inputCityName.trim();
+        final weather = await _weatherService.getWeather(resultCity);
         setState(() {
           _weather = weather;
           _controller = TextEditingController(text: _weather?.cityName ?? "Город");
@@ -65,6 +66,7 @@ class _HomePageState extends State<HomePage> {
                     textAlign: TextAlign.center,
                     controller: _controller,
                     onTap: () {
+                      _controller: _controller.clear();
                       _controller.selection = TextSelection(baseOffset: 0, extentOffset: _controller.value.text.length);
                     },
                     onSubmitted: (text) {
@@ -73,10 +75,16 @@ class _HomePageState extends State<HomePage> {
                     style: const TextStyle(
                         fontFamily: '.SF UI Text',
                         fontStyle: FontStyle.italic,
-                        fontSize: 52,
+                        fontSize: 26,
                         fontWeight: FontWeight.w400,
-                        decorationStyle: TextDecorationStyle.dotted,
-                        color: Color.fromARGB(228, 106, 145, 253))),
+                        decorationStyle: TextDecorationStyle.wavy,
+                        decorationColor: Color.fromARGB(228, 106, 145, 253),
+                        color: Color.fromARGB(228, 106, 145, 253)),
+                    decoration: const InputDecoration(
+                      
+                      filled: false
+                    )
+                  ),
                   Stack(
                     alignment: Alignment.topCenter,
                     children: [
