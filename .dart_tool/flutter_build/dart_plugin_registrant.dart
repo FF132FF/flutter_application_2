@@ -10,6 +10,7 @@ import 'package:geocoding_android/geocoding_android.dart';
 import 'package:geolocator_android/geolocator_android.dart';
 import 'package:geocoding_ios/geocoding_ios.dart';
 import 'package:geolocator_apple/geolocator_apple.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:geolocator_apple/geolocator_apple.dart';
 
 @pragma('vm:entry-point')
@@ -56,6 +57,15 @@ class _PluginRegistrant {
       }
 
     } else if (Platform.isLinux) {
+      try {
+        ConnectivityPlusLinuxPlugin.registerWith();
+      } catch (err) {
+        print(
+          '`connectivity_plus` threw an error: $err. '
+          'The app may not function as expected until you remove this plugin from pubspec.yaml'
+        );
+      }
+
     } else if (Platform.isMacOS) {
       try {
         GeolocatorApple.registerWith();

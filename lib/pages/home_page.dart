@@ -84,7 +84,7 @@ class _HomePageState extends State<HomePage> {
                         height: 225, width: 225),
                       Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Container(width: 0, height: 100),
+                          const SizedBox(width: 0, height: 100),
                           Text(
                             '${_weather?.temperature.round()}°C',
                             style: const TextStyle(
@@ -103,13 +103,13 @@ class _HomePageState extends State<HomePage> {
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                         fontFamily: '.SF UI Text',
-                        fontSize: 32,
+                        fontSize: 26,
                         fontStyle: FontStyle.italic,
                         fontWeight: FontWeight.w300,
                         color: Color.fromARGB(228, 106, 145, 253))),
                   ],),
                 Container(
-                  margin: EdgeInsets.only(right: 30, left: 10, top: 20, bottom: 20),
+                  margin: const EdgeInsets.only(right: 30, left: 10, top: 20, bottom: 20),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
