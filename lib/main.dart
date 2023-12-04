@@ -8,6 +8,7 @@ void main() {
   DependencyInjection.init();
 }
 
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'WeatherApp',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(228, 106, 145, 253)),
+          colorScheme: ColorScheme.fromSeed(seedColor: const Color.fromARGB(255, 114, 185, 213)),
           useMaterial3: true,
         ),
         

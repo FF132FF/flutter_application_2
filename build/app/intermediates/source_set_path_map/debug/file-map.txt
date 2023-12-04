@@ -13,5 +13,6 @@ com.example.weatherapp-rs-11 C:\Users\Host\Desktop\MobAppDev\flutter_application
 com.example.weatherapp-mergeDebugResources-12 C:\Users\Host\Desktop\MobAppDev\flutter_application_2\build\app\intermediates\incremental\debug\mergeDebugResources\merged.dir
 com.example.weatherapp-mergeDebugResources-13 C:\Users\Host\Desktop\MobAppDev\flutter_application_2\build\app\intermediates\incremental\debug\mergeDebugResources\stripped.dir
 com.example.weatherapp-merged_res-14 C:\Users\Host\Desktop\MobAppDev\flutter_application_2\build\app\intermediates\merged_res\debug
-com.example.weatherapp-packaged_res-15 C:\Users\Host\Desktop\MobAppDev\flutter_application_2\build\geocoding_android\intermediates\packaged_res\debug
-com.example.weatherapp-packaged_res-16 C:\Users\Host\Desktop\MobAppDev\flutter_application_2\build\geolocator_android\intermediates\packaged_res\debug
+com.example.weatherapp-packaged_res-15 C:\Users\Host\Desktop\MobAppDev\flutter_application_2\build\connectivity_plus\intermediates\packaged_res\debug
+com.example.weatherapp-packaged_res-16 C:\Users\Host\Desktop\MobAppDev\flutter_application_2\build\geocoding_android\intermediates\packaged_res\debug
+com.example.weatherapp-packaged_res-17 C:\Users\Host\Desktop\MobAppDev\flutter_application_2\build\geolocator_android\intermediates\packaged_res\debug

@@ -36,8 +36,7 @@ class WeatherService {
             LocationAccuracy.bestForNavigation); // с высокой точностью
 
     // // преобразование местоположения в список placemark objects
-    List<Placemark> placemarks =
-        await placemarkFromCoordinates(position.latitude, position.longitude);
+    List<Placemark> placemarks = await placemarkFromCoordinates(position.latitude, position.longitude);
 
     // извлекаем название города
     String? city = placemarks[0].locality;

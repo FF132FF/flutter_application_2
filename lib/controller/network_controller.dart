@@ -25,7 +25,7 @@ class NetworkController extends GetxController {
           ),
           isDismissible: false,
           duration: const Duration(days: 1),
-          backgroundColor: const Color.fromARGB(228, 106, 145, 253),
+          backgroundColor: const Color.fromARGB(255, 114, 185, 213),
           icon: const Icon(Icons.wifi_off, color: Colors.white, size: 33),
           snackStyle: SnackStyle.GROUNDED
         );
